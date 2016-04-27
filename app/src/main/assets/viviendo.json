@@ -1,0 +1,37 @@
+{
+  "pois": [
+    {
+      "nombre":"Qué tener en cuenta antes de adoptar un animal de compañia",
+      "descripcion":"Puede pasarle a cualquiera. Ves un precioso gatito rayado, con las patitas blancas y ojos verdes buscando atención desesperadamente. O quizás es un hermoso labrador cuya cola parece moverse sólo por ti.",
+      "sitio": "http://www.animanaturalis.org/p/601/que_tener_en_cuenta_antes_de_adoptar_un_animal_de_compania/"
+    },
+    {
+      "nombre":"8 cosas a considerar antes de adoptar una mascota",
+      "descripcion":"Aunque necesites compañía, piénsalo bien",
+      "sitio": "http://www.chilango.com/general/nota/2013/10/08/8-cosas-a-considerar-antes-de-adoptar-una-mascota/"
+    },
+    {
+      "nombre":"Hazte estas preguntas antes de adoptar un perro",
+      "descripcion":"Adoptar o comprar un perro es algo serio, que implicará mucho tiempo, dedicación y dinero ",
+      "sitio": "http://www.petdarling.com/articulos/preguntas-antes-de-adoptar-un-perro/"
+    },
+    {
+      "nombre":"5 cosas que debes saber antes de adoptar a un perro",
+      "descripcion":"Muchas personas dicen “si lo hubiera sabido antes…” Para que no te ocurra lo mismo es que hoy te contamos 5 cosas que te gustaría saber antes de comprar un perro. ",
+      "sitio": "http://www.imujer.com/hogar/6641/5-cosas-que-debes-saber-antes-de-comprar-o-adoptar-un-perro/"
+    },
+    {
+      "nombre":"10 cosas que nadie te dice antes de adoptar un perro",
+      "descripcion":"Si nunca has tenido perros y te estás planteando tener uno...   Te voy a decir lo que nadie te dice y que puede ahorrarte algunas sorpresas.",
+      "sitio": "http://www.flordselva.com/10-cosas-que-nadie-te-dice-antes-de-adoptar-un-perro/"
+    },
+    {
+      "nombre":"¿Quieres tener una mascota? Conoce los cuidados básicos que necesita",
+      "descripcion":"La decisión de tener una mascota doméstica implica compromiso, responsabilidad y tiempo; ya que los animales de compañía necesitan tener una buena calidad de vida.",
+      "sitio": "http://www.noticias24.com/mascotas/noticia/7858/quieres-tener-una-mascota-conoce-los-cuidados-basicos-que-necesita/"
+    }
+  ]
+  /*
+
+  */
+}

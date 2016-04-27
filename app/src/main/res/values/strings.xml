@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">HelpPet</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="usuario">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="buscas">¿Qué buscas?</string>
+    <string name="tamanio">Tamaño</string>
+    <string name="edad">Edad</string>
+    <string name="Buscar" />
+    <string name="title_activity_centros">CentrosActivity</string>
+    <string name="asociacion">Asociación</string>
+    <string name="nombre">Nombre</string>
+    <string name="telefono">Teléfono</string>
+    <string name="email">E-mail</string>
+    <string name="direccion">Dirección</string>
+    <string name="genero">Género</string>
+    <string name="hermbra">Hembra</string>
+    <string name="macho">Macho</string>
+    <string name="categoria">Categoría</string>
+    <string name="antesadoptar">Antes de adoptar</string>
+    <string name="cuidadosbasicos">Cuidados Básicos</string>
+    <string name="viviendoconmascota">Viviendo con tu mascota</string>
+    <string name="nombrePerrito">Nombre de tu perrito</string>
+    <string name="descripcionPerrito">Descripción</string>
+    <string name="edaperrito">Edad</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="presupuesto">Presupuesto</string>
+    <string name="vives">Vives en...</string>
+    <string name="numHoras">¿Cuántas horas estarías con tu mascota?</string>
+    <string name="grande">Grande</string>
+    <string name="mediano">Mediano</string>
+    <string name="pequeno">Pequeño</string>
+    <string name="buscar">Buscar</string>
+    <string name="mascotaIdeal">Tu mascota ideal</string>
+    <string name="categoriaideal">¡Travieso!</string>
+    <string name="descripcionideal">Descripción:</string>
+    <string name="vercentros">Ver centros de adopción</string>
+    <string name="bienvenido">Bienvenido a HelpPet</string>
+    <string name="contraincorrecta">Contraseña incorrecta</string>
+    <string name="usuarionoexiste">El usuario no existe</string>
+    <string name="llenacampos">Llena todos los campos</string>
+    <string name="registrook">Registro completo</string>
+    <string name="usuarioyaexiste">El usuario ya existe</string>
+    <string name="contradiferentes">Las contraseñas son diferentes</string>
+    <string name="usuarioinvalido">El usuario no es válido</string>
+    <string name="llenartodosloscampos">Llena todos los campos</string>
+    <string name="buscarm">Buscar</string>
+
+
+    <string-array name="adopta_tamano_array">
+        <item>Pequeño</item>
+        <item>Mediano</item>
+        <item>Grande</item>
+    </string-array>
+
+    <string-array name="adopta_edad_array">
+        <item>1 a 6 meses</item>
+        <item>6 meses a 1 año</item>
+        <item>1 año a 3 años</item>
+        <item>Más de 3 años</item>
+    </string-array>
+
+    <string-array name="adopta_categoria_array">
+        <item>Fiestero</item>
+        <item>Independiente</item>
+        <item>Dinámico</item>
+        <item>Divertido</item>
+        <item>Tímido</item>
+        <item>Juguetón</item>
+        <item>Faldero</item>
+        <item>Tapete</item>
+        <item>Inteligente</item>
+    </string-array>
+
+
+    <string-array name="noticias">
+        <item>La agencia tributaria de México vigilará las cuentas de las iglesias</item>
+        <item>La Fiscalía mexicana ordena localizar a la actriz Kate del Castillo</item>
+        <item>Humberto Moreira regresa a México: “Han manchado mi honor”</item>
+        <item>Por qué el dolar sube y el peso baja</item>
+        <item>El Papa exhorta a los mexicanos a luchar contra la violencia</item>
+        <item>Arrecia la guerra subterránea en la izquierda mexicana</item>
+        <item>Copa Libertadores 2016: calendario, grupos y resultados</item>
+        <item>“Me he subido al Metro, me he guardado la cartera y no pasa nada”</item>
+        <item>Kate del Castillo presenta amparo para evitar ser detenida</item>
+        <item>El PRI apuesta por Omar Fayad para las elecciones en Hidalgo</item>
+        <item>Los funcionarios del Gobierno de México rehúyen la transparencia</item>
+    </string-array>
+    <string-array name="descripcion">
+        <item>El Gobierno mexicano busca estimar los ingresos de las 8.500 asociaciones religiosas registradas ante Gobernación (Interior. Sonia Corona</item>
+        <item>La Procuraduría General de la República emite una orden de localización y presentación para forzar a la actriz a que se presente ante un ministerio público a explicar sus vínculos con El Chapo. Zorayda Gallegos</item>
+        <item>El expresidente del PRI, detenido en España y puesto en libertad por falta de pruebas, no descarta volver a la política en su país. Pablo de Llano</item>
+        <item>En los asuntos económicos siempre habrá mensajes de todo tipo, pero el contexto que tengamos es básico para filtrarlos. Sofía Macías</item>
+        <item>“El México de los cárteles no es el México que quiere nuestra madre", dice el pontífice. El país</item>
+        <item>El expresidente del PRI no descarta volver a la política después de que un juez español levantara las medidas cautelares en su contra. El país</item>
+        <item>El asesinato de una alcaldesa y las acusaciones al respecto entre las diferentes tribus del PRD ilustran la decadencia de la clase política. Pablo Ferri</item>
+        <item>Todos los cruces y partidos de los equipos que participan en esta edición de la Copa Libertadores. Anónimo</item>
+        <item>El director del transporte público de la capital pide desincentivar el uso del coche en una de las ciudades más grandes del mundo. Elena Reyna</item>
+        <item>La actriz presentó un recurso legal para evitar una orden de aprehensión después de que la Fiscalía revelara que estaba bajo investigación. El país</item>
+        <item>El senador, que naufragó en su iniciativa de ley contra los delitos en Internet, buscará prolongar la hegemonía priista en este Estado. Pablo de Llano</item>
+        <item>Más de la mitad de los servidores públicos se niegan a declarar si tienen un posible conflicto de interés que influya en su cargo. Zorayda Gallegos</item>
+    </string-array>
+    <string name="title_activity_tipo">TipoActivity</string>
+    <string name="tiempo">¿Cuánto tiempo le puedes dedicar a tu mascota?</string>
+    <string name="entrenamiento">¿Cuánto tiempo te gustaría entrenar a tu mascota?</string>
+    <string name="ejercicio">¿Cuántas horas al día podrías dedicar a ejercitar a tu perro?</string>
+    <string name="llenarcampos">Favor de llenar todos los campos</string>
+
+    <string-array name="spinner_tiempo_array">
+        <item>Todo el tiempo</item>
+        <item>Algún tiempo</item>
+        <item>Poco tiempo</item>
+    </string-array>
+    <string-array name="spinner_entrenamiento_array">
+        <item>Mucho entrenamiento</item>
+        <item>Poco entrenamiento</item>
+        <item>Nada de entrenamiento</item>
+    </string-array>
+    <string-array name="spinner_ejercicio_array">
+        <item>7 horas o más</item>
+        <item>3 a 6 horas</item>
+        <item>2 horas o menos</item>
+    </string-array>
+    <string name="title_activity_navigation">NavigationActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

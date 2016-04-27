@@ -1,0 +1,7 @@
+{
+  "menu":[
+    {"nombre":"Antes de adoptar ", "archivo":"antes", "color":"BLUE"},
+    {"nombre":"Cuidados básicos ", "archivo":"cuidados", "color":"YELLOW"},
+    {"nombre":"Viviendo con tu mascota ", "archivo":"viviendo", "color":"AZURE"}
+  ]
+}

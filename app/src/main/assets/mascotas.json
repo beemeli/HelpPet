@@ -1,0 +1,14 @@
+{
+  "centros":[
+    {"tipo":"perro", "tamanio":"Pequeño", "categoria":"Travieso", "nombre":"+Kota Acoxpa", "tel":"55455654","direccion":"Paseo Acoxpa 211, Ciudad de Mexico", "latitude":19.285781, "longitude":-99.1488464},
+    {"tipo":"perro", "tamanio":"Pequeño", "categoria":"Tranquilo", "nombre":"Pet Planet", "tel":"55678976", "direccion":"Insurgentes Sur 1211, Ciudad de Mexico", "latitude":19.2858604, "longitude":-99.1488464},
+    {"tipo":"perro", "tamanio":"Mediano", "categoria":"Travieso", "nombre":"El gran sabueso", "tel":"55412354", "direccion":"Divisiòn del Norte 1500, Ciudad de Mexico", "latitude":19.286019, "longitude":-99.1488464},
+    {"tipo":"perro", "tamanio":"Mediano", "categoria":"Tranquilo", "nombre":"Maskota", "tel":"55455654", "direccion":"Calzada de Tlapan 1500, Ciudad de Mexico", "latitude":19.2824901, "longitude":-99.1915883},
+    {"tipo":"perro", "tamanio":"Grande", "categoria":"Travieso", "nombre":"Animal Shop", "tel":"55478954", "direccion":"Av. Universidad 312, Ciudad de Mexico", "latitude":19.344758, "longitude":-99.1507755},
+    {"tipo":"gato", "tamanio":"Pequeño", "categoria":"Juguetón", "nombre":"+Kota Acoxpa", "tel":"55612354", "direccion":"Paseo Acoxpa 211, Ciudad de Mexico", "latitude":19.285781, "longitude":-99.1488464},
+    {"tipo":"gato", "tamanio":"Pequeño", "categoria":"Travieso", "nombre":"Pet Planet", "tel":"55433354", "direccion":"Insurgentes Sur 1211, Ciudad de Mexico", "latitude":19.2858604, "longitude":-99.1488464},
+    {"tipo":"gato", "tamanio":"Mediano", "categoria":"Tranquilo", "nombre":"El gran sabueso", "tel":"55409750", "direccion":"Divisiòn del Norte 1500, Ciudad de Mexico", "latitude":19.286019, "longitude":-99.1488464},
+    {"tipo":"gato", "tamanio":"Mediano", "categoria":"Tranquilo", "nombre":"Maskota", "tel":"5540120", "direccion":"Calzada de Tlapan 1500, Ciudad de Mexico", "latitude":19.2824901, "longitude":-99.1915883},
+    {"tipo":"gato", "tamanio":"Grande", "categoria":"Juguetón", "nombre":"Animal Shop", "tel":"55455654", "direccion":"Av. Universidad 312, Ciudad de Mexico", "latitude":19.344758, "longitude":-99.1507755}
+  ]
+}

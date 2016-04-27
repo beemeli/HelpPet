@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_favorite_outline_24dp"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_view"
+            android:icon="@drawable/ic_favorite_outline_24dp"
+            android:title="Adopta" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_favorite_outline_24dp"
+            android:title="Aprende" />
+        <item
+            android:id="@+id/nav_conocelos"
+            android:icon="@drawable/ic_favorite_outline_24dp"
+            android:title="Nuestros perritos" />
+        <item
+            android:id="@+id/nav_identifica"
+            android:icon="@drawable/ic_favorite_outline_24dp"
+            android:title="¿Cuál es tu mascota ideal?" />
+        <item
+            android:id="@+id/nav_sensor"
+            android:icon="@drawable/ic_favorite_outline_24dp"
+            android:title="Sensor" />
+        <item
+            android:id="@+id/nav_grafica_sensor"
+            android:icon="@drawable/ic_favorite_outline_24dp"
+            android:title="Gráfica sensor" />
+    </group>
+
+    <item android:title="Mi cuenta">
+        <menu>
+            <group android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/ic_person_outline_24dp"
+                android:title="Ver perfil" />
+            </group>
+
+        </menu>
+    </item>
+
+</menu>
