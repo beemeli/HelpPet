@@ -1,68 +1,68 @@
 <resources>
     <string name="app_name">HelpPet</string>
-    <string name="mensaje_nuevo">¡Saca a pasear a tu perrito!</string>
-    <string name="hello_world">¡No olvides sacar a dar un paseo a tu perrito!</string>
+    <string name="mensaje_nuevo">Take a walk with your pet!</string>
+    <string name="hello_world">Don\'t forget to walk your dog!</string>
 
     <string name="title_activity_login">LoginActivity</string>
-    <string name="usuario">Usuario</string>
-    <string name="password">Contraseña</string>
-    <string name="buscas">¿Qué buscas?</string>
-    <string name="tamanio">Tamaño</string>
-    <string name="edad">Edad</string>
+    <string name="usuario">User</string>
+    <string name="password">Password</string>
+    <string name="buscas">What are you looking for?</string>
+    <string name="tamanio">Size</string>
+    <string name="edad">Age</string>
     <string name="Buscar" />
     <string name="title_activity_centros">CentrosActivity</string>
-    <string name="asociacion">Asociación</string>
-    <string name="nombre">Nombre</string>
-    <string name="telefono">Teléfono</string>
+    <string name="asociacion">Association</string>
+    <string name="nombre">Name</string>
+    <string name="telefono">Phone</string>
     <string name="email">E-mail</string>
-    <string name="direccion">Dirección</string>
-    <string name="genero">Género</string>
-    <string name="hermbra">Hembra</string>
-    <string name="macho">Macho</string>
-    <string name="categoria">Categoría</string>
-    <string name="antesadoptar">Antes de adoptar</string>
-    <string name="cuidadosbasicos">Cuidados Básicos</string>
+    <string name="direccion">Address</string>
+    <string name="genero">Gender</string>
+    <string name="hermbra">Female</string>
+    <string name="macho">Male</string>
+    <string name="categoria">Category</string>
+    <string name="antesadoptar">Before</string>
+    <string name="cuidadosbasicos">Basic care</string>
     <string name="viviendoconmascota">Viviendo con tu mascota</string>
-    <string name="nombrePerrito">Nombre de tu perrito</string>
-    <string name="descripcionPerrito">Descripción</string>
-    <string name="edaperrito">Edad</string>
+    <string name="nombrePerrito">Your pet\'s name</string>
+    <string name="descripcionPerrito">Description</string>
+    <string name="edaperrito">Age</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="presupuesto">Presupuesto</string>
-    <string name="vives">Vives en...</string>
-    <string name="numHoras">¿Cuántas horas estarías con tu mascota?</string>
-    <string name="grande">Grande</string>
-    <string name="mediano">Mediano</string>
-    <string name="pequeno">Pequeño</string>
-    <string name="buscar">Buscar</string>
-    <string name="mascotaIdeal">Tu mascota ideal</string>
-    <string name="categoriaideal">¡Travieso!</string>
-    <string name="descripcionideal">Descripción:</string>
+    <string name="presupuesto">Budget</string>
+    <string name="vives">Where do you live?</string>
+    <string name="numHoras">How many hours would you be with your pet?</string>
+    <string name="grande">Big</string>
+    <string name="mediano">Medium</string>
+    <string name="pequeno">Small</string>
+    <string name="buscar">OK</string>
+    <string name="mascotaIdeal">Your ideal pet</string>
+    <string name="categoriaideal">Naughty!</string>
+    <string name="descripcionideal">Description:</string>
     <string name="vercentros">Ver centros de adopción</string>
-    <string name="bienvenido">Bienvenido a HelpPet</string>
-    <string name="contraincorrecta">Contraseña incorrecta</string>
-    <string name="usuarionoexiste">El usuario no existe</string>
-    <string name="llenacampos">Llena todos los campos</string>
-    <string name="registrook">Registro completo</string>
-    <string name="usuarioyaexiste">El usuario ya existe</string>
-    <string name="contradiferentes">Las contraseñas son diferentes</string>
-    <string name="usuarioinvalido">El usuario no es válido</string>
-    <string name="llenartodosloscampos">Llena todos los campos</string>
-    <string name="buscarm">Buscar</string>
+    <string name="bienvenido">Welcome to HelpPet</string>
+    <string name="contraincorrecta">Wrong password</string>
+    <string name="usuarionoexiste">This user doesn\'t exist</string>
+    <string name="llenacampos">Please fill in all fields</string>
+    <string name="registrook">Completed</string>
+    <string name="usuarioyaexiste">This user alredy exists</string>
+    <string name="contradiferentes">Passwords must match</string>
+    <string name="usuarioinvalido">User not valid</string>
+    <string name="llenartodosloscampos">Please fill in all fields</string>
+    <string name="buscarm">OK</string>
 
 
     <string-array name="adopta_tamano_array">
-        <item>Pequeño</item>
-        <item>Mediano</item>
-        <item>Grande</item>
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Big</item>
     </string-array>
 
     <string-array name="adopta_edad_array">
-        <item>1 a 6 meses</item>
-        <item>6 meses a 1 año</item>
-        <item>1 año a 3 años</item>
-        <item>Más de 3 años</item>
+        <item>1 to 6 months</item>
+        <item>6 months to 1 year</item>
+        <item>1 year to 3 years</item>
+        <item>More than 3 years</item>
     </string-array>
 
     <string-array name="adopta_categoria_array">
@@ -106,10 +106,10 @@
         <item>Más de la mitad de los servidores públicos se niegan a declarar si tienen un posible conflicto de interés que influya en su cargo. Zorayda Gallegos</item>
     </string-array>
     <string name="title_activity_tipo">TipoActivity</string>
-    <string name="tiempo">¿Cuánto tiempo le puedes dedicar a tu mascota?</string>
-    <string name="entrenamiento">¿Cuánto tiempo te gustaría entrenar a tu mascota?</string>
-    <string name="ejercicio">¿Cuántas horas al día podrías dedicar a ejercitar a tu perro?</string>
-    <string name="llenarcampos">Favor de llenar todos los campos</string>
+    <string name="tiempo">How much time would you spend pet?</string>
+    <string name="entrenamiento">How long would you like to train your pet?</string>
+    <string name="ejercicio">How many hours a day you could dedicate to exercise your dog?</string>
+    <string name="llenarcampos">Please fill in all fields</string>
 
     <string-array name="spinner_tiempo_array">
         <item>Todo el tiempo</item>
@@ -132,10 +132,13 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="registrate">Registrate</string>
-    <string name="login">Inicia sesión</string>
-    <string name="registrate_singup">Regístrate</string>
-    <string name="perfil">Perfil</string>
-    <string name="modificar">Modificar</string>
-    <string name="pasos">Pasos</string>
+
+
+    <string name="registrate">Sign up</string>
+    <string name="login">Login</string>
+    <string name="registrate_singup">Sign Up</string>
+    <string name="perfil">Profile</string>
+    <string name="modificar">Save changes</string>
+    <string name="pasos">Steps</string>
+
 </resources>

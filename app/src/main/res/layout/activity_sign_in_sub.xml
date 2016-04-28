@@ -56,7 +56,7 @@
         android:onClick="registrate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="@string/registrate_singup"
         android:id="@+id/registrarUsuario"
         android:textColor="#FFF"
         android:background="@color/colorPrimary"
@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Regístrate"
+        android:text="@string/registrate_singup"
         android:id="@+id/textView5"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />

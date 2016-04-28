@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Perfil"
+        android:text="@string/perfil"
         android:id="@+id/textView20"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -45,7 +45,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Modificar"
+        android:text="@string/modificar"
         android:id="@+id/button"
         android:layout_below="@+id/editText2"
         android:layout_alignParentLeft="true"
