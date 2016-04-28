@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="itesm.mx.helppet.AdoptaActivity">
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/buscas"
+        android:id="@+id/textView3"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:onClick="dogbtn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/dogb"
+        android:src="@drawable/dogb"
+        android:background="#00ffffff"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitCenter" />
+
+    <ImageButton
+        android:onClick="catbtn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/catb"
+        android:src="@drawable/cata"
+        android:background="#00ffffff"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:onClick="buscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buscarm"
+        android:id="@+id/buscar"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/spinner_tamano"
+        android:layout_alignEnd="@+id/spinner_tamano" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/edad"
+        android:id="@+id/textView2"
+        android:layout_alignTop="@+id/spinner_edad"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_edad"
+        android:spinnerMode="dropdown"
+        android:layout_above="@+id/spinner_categoria"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/categoria"
+        android:id="@+id/textView4"
+        android:layout_alignTop="@+id/spinner_categoria"
+        android:layout_toLeftOf="@+id/spinner_edad"
+        android:layout_toStartOf="@+id/spinner_edad" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_categoria"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/dogb"
+        android:layout_alignLeft="@+id/spinner_tamano"
+        android:layout_alignStart="@+id/spinner_tamano" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/tamanio"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/catb"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_tamano"
+        android:spinnerMode="dropdown"
+        android:layout_above="@+id/buscar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4" />
+
+</RelativeLayout>
