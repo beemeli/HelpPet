@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class Centro implements Serializable {
     private String nombre;
     private String tipo;
+    private String prueba;
     //private String edad;
     private String categoria;
     private String tamanio;
