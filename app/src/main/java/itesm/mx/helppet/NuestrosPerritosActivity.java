@@ -6,6 +6,8 @@ import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -20,11 +22,15 @@ public class NuestrosPerritosActivity extends ListActivity {
     private TiposAdapter tiposAdapter;
     private TipoMascota tipoMascota;
     private static ArrayList<TipoMascota> tipos ;
+    Animation animTranslate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_nuestros_perritos);
+        animTranslate = AnimationUtils.loadAnimation(this, R.anim.anim_translate);
 
         tipos = null;
         tipos = new ArrayList<TipoMascota>();
@@ -62,6 +68,7 @@ public class NuestrosPerritosActivity extends ListActivity {
 
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
+        animTranslate = AnimationUtils.loadAnimation(this, R.anim.anim_translate);
 
         final TipoMascota tipo_selec = tiposAdapter.getItem(position);
         Intent it= new Intent(this, TipoActivity.class);

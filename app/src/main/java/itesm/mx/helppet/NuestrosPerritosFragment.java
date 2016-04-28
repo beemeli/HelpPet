@@ -10,6 +10,8 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -28,6 +30,7 @@ public class NuestrosPerritosFragment extends ListFragment {
     private TiposAdapter tiposAdapter;
     private TipoMascota tipoMascota;
     private static ArrayList<TipoMascota> tipos ;
+    Animation animTranslate;
 
 
     public NuestrosPerritosFragment() {
@@ -36,6 +39,7 @@ public class NuestrosPerritosFragment extends ListFragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+        animTranslate = AnimationUtils.loadAnimation(getActivity(), R.anim.anim_translate);
 
         tipos = null;
         tipos = new ArrayList<TipoMascota>();
@@ -46,6 +50,7 @@ public class NuestrosPerritosFragment extends ListFragment {
     }
 
     public ArrayList<TipoMascota> cargaDatos() {
+
         ArrayList<Centro> series = new ArrayList<Centro>();
         AssetManager assetManager = getActivity().getAssets();
         BufferedReader bufferedReader = null;
@@ -75,6 +80,7 @@ public class NuestrosPerritosFragment extends ListFragment {
 
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
+        l.getChildAt(position).startAnimation(animTranslate);
 
         final TipoMascota tipo_selec = tiposAdapter.getItem(position);
         Intent it= new Intent(getActivity(), TipoActivity.class);

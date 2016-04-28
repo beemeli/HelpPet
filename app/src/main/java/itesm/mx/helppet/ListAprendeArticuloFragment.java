@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -30,6 +32,8 @@ public class ListAprendeArticuloFragment  extends ListFragment {
     private ArrayAdapter<String> desc;
     private ArrayAdapter<Articulo> items;
     private ArrayAdapter<Articulo> itemDesc;
+    Animation animTranslate;
+
 
 
     private String opcion;
@@ -42,6 +46,8 @@ public class ListAprendeArticuloFragment  extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        animTranslate = AnimationUtils.loadAnimation(getActivity(), R.anim.anim_translate);
+
         opcion = getActivity().getIntent().getStringExtra("opcion");
         System.out.println("---------------------" + opcion);
         ImageView im = (ImageView)getActivity().findViewById(R.id.imageArticulo);
@@ -78,6 +84,9 @@ public class ListAprendeArticuloFragment  extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
+
+        l.getChildAt(position).startAnimation(animTranslate);
+
 
         itemDesc = new ArrayAdapter<Articulo>(getActivity(),
                 android.R.layout.simple_list_item_1,
