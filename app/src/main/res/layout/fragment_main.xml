@@ -4,64 +4,56 @@
     android:layout_height="match_parent"
     tools:context="itesm.mx.helppet.MainFragment">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/portada1"
-        android:layout_above="@+id/adopta"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:onClick="irAdopta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/adopta"
-        android:src="@drawable/adopta"
-        android:layout_marginBottom="154dp"
+        android:src="@drawable/adopta_b"
         android:background="#00ffffff"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter" />
 
     <ImageButton
         android:onClick="irAprende"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/aprende"
-        android:src="@drawable/aprende"
+        android:src="@drawable/aprende_b"
         android:background="#00ffffff"
-        android:layout_marginRight="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_below="@+id/imageView"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView" />
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/adopta"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <ImageButton
         android:onClick="irConocelos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/conocelos"
-        android:src="@drawable/conocelos"
+        android:src="@drawable/nuestrosperritos_b"
         android:background="#00ffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/adopta"
-        android:layout_alignStart="@+id/adopta" />
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/aprende"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:onClick="irIdentifica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/identifica"
-        android:src="@drawable/identifica"
+        android:src="@drawable/identifica_b"
         android:background="#00ffffff"
-        android:layout_alignTop="@+id/conocelos"
-        android:layout_alignLeft="@+id/aprende"
-        android:layout_alignStart="@+id/aprende"
-        android:layout_gravity="left|bottom" />
-
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/conocelos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

@@ -13,14 +13,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 private String user;
+    Animation animTranslate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+        animTranslate = AnimationUtils.loadAnimation(this, R.anim.anim_translate);
+
         user = getIntent().getStringExtra("email");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -134,6 +140,8 @@ private String user;
         return true;
     }
     public void irAdopta(View view) {
+        view.startAnimation(animTranslate);
+
         Intent it= new Intent(this, AdoptaActivity.class);
         it.putExtra("user", user);
         startActivity(it);
@@ -142,18 +150,24 @@ private String user;
     }
 
     public void irAprende(View view) {
+        view.startAnimation(animTranslate);
+
         Intent it= new Intent(this, AprendeActivity.class);
         it.putExtra("user", user);
         startActivity(it);
     }
 
     public void irIdentifica(View view) {
+        view.startAnimation(animTranslate);
+
         Intent it= new Intent(this, IdentificaActivity.class);
         it.putExtra("user", user);
         startActivity(it);
     }
 
     public void irConocelos(View view) {
+        view.startAnimation(animTranslate);
+
         Intent it= new Intent(this, NuestrosPerritosActivity.class);
         it.putExtra("user", user);
         startActivity(it);
