@@ -42,12 +42,15 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyChTXxtnS5rJUT5EUhs5ZBuJz1pqUTT68I" />
 
+
+
         <activity android:name=".TipoActivity" />
         <activity android:name=".ResIdentificaActivity" />
         <activity
             android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MapaLugarActivity" />
     </application>
 
 </manifest>

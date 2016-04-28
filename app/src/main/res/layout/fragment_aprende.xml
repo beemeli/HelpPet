@@ -6,29 +6,66 @@
 
     <ImageButton
         android:onClick="antes"
-        android:src="@drawable/antes"
+        android:src="@drawable/antes_b"
 
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:text="@string/antesadoptar"
         android:id="@+id/button_antes"
         android:background="#00ffffff"
         android:textColor="#004bc4"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="65dp" />
 
     <ImageButton
-        android:onClick="viviendo"
-        android:src="@drawable/dogman"
+        android:onClick="cuidados"
+        android:src="@drawable/cuidados_b"
 
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:text="@string/viviendoconmascota"
+        android:text="@string/cuidadosbasicos"
         android:id="@+id/button_viviendo"
         android:background="#00ffffff"
         android:textColor="#004bc4"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/button_antes"
-        android:layout_alignStart="@+id/button_antes" />
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_alignTop="@+id/button_antes"
+        android:layout_toRightOf="@+id/button_antes"
+        android:layout_toEndOf="@+id/button_antes" />
 
+    <ImageButton
+        android:onClick="veterinaria"
+        android:src="@drawable/veterinarias_b"
+
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:text="@string/viviendoconmascota"
+        android:id="@+id/button_veterinaria"
+        android:background="#00ffffff"
+        android:textColor="#004bc4"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/button_antes"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="50dp" />
+
+    <ImageButton
+        android:onClick="hotel"
+        android:src="@drawable/hotel_b"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:text="@string/viviendoconmascota"
+        android:id="@+id/button_hotel"
+        android:background="#00ffffff"
+        android:textColor="#004bc4"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_alignTop="@+id/button_veterinaria"
+        android:layout_toRightOf="@+id/button_veterinaria"
+        android:layout_toEndOf="@+id/button_veterinaria" />
 </RelativeLayout>

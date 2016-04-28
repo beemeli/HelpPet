@@ -1,0 +1,8 @@
+{
+  "lugares":[
+    {"nombre":"PetCentral", "telefono":"52115200","sitio":"http://www.petcentral.mx/v/hotel_canino.html","lat":19.415130,"lon":-99.169675},
+    {"nombre":"Canino Mondo", "telefono":"55250448","sitio":"http://www.caninomondo.com/","lat":19.338608,"lon":-99.208296},
+    {"nombre":"Adventure Dog Camp", "telefono":"58113134","sitio":"","lat":19.337551,"lon":-99.320574},
+    {"nombre":"Animal Training & Dog Housing", "telefono":"65532159","sitio":"http://animaltraining.com.mx/","lat":19.348505,"lon":-99.305847}
+  ]
+}

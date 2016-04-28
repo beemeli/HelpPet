@@ -16,14 +16,14 @@ public class AprendeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aprende);
         user = getIntent().getStringExtra("email");
-        animTranslate= AnimationUtils.loadAnimation(this, R.anim.anim_translate);
+        animTranslate= AnimationUtils.loadAnimation(this, R.anim.anim_alpha);
 
 
 
     }
 
     public void antes(View view) {
-        //view.startAnimation(animTranslate);
+        view.startAnimation(animTranslate);
 
         Intent it= new Intent(this, AprendeArticulosActivity.class);
         it.putExtra("user", user);
@@ -32,16 +32,28 @@ public class AprendeActivity extends AppCompatActivity {
     }
 
     public void cuidados(View view) {
+        view.startAnimation(animTranslate);
+
         Intent it= new Intent(this, AprendeArticulosActivity.class);
         it.putExtra("user", user);
         it.putExtra("opcion", "cuidados");
         startActivity(it);
     }
 
-    public void viviendo(View view) {
-        Intent it= new Intent(this, AprendeArticulosActivity.class);
+    public void veterinaria(View view) {
+        view.startAnimation(animTranslate);
+
+        Intent it= new Intent(this, MapaLugarActivity.class);
         it.putExtra("user", user);
-        it.putExtra("opcion", "viviendo");
+        it.putExtra("lugar", "hoteles");
+        startActivity(it);
+    }
+    public void hotel(View view) {
+        view.startAnimation(animTranslate);
+
+        Intent it= new Intent(this, MapaLugarActivity.class);
+        it.putExtra("user", user);
+        it.putExtra("lugar", "veterinarias");
         startActivity(it);
     }
 }
