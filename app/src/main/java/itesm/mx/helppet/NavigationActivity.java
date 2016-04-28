@@ -1,9 +1,16 @@
 package itesm.mx.helppet;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,16 +22,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.TextView;
+
+import java.util.Date;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-private String user;
+    private String user;
     Animation animTranslate;
+    private Intent intento;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+
+        intento = new Intent(this, ActualizaServicio.class);
+
+
         animTranslate = AnimationUtils.loadAnimation(this, R.anim.anim_translate);
 
         user = getIntent().getStringExtra("email");
@@ -49,9 +65,22 @@ private String user;
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.contenedor, new MainFragment()).commit();
+        /*try {
+            System.out.println("")
+            if (!intento.getStringExtra("fragmento").equals("sensor")) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contenedor, new MainFragment()).commit();
+            } else {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contenedor, new SensorFragment()).commit();
+            }
+        }catch(NullPointerException e){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.contenedor, new MainFragment()).commit();
+        }*/
+
     }
 
     @Override
@@ -172,4 +201,52 @@ private String user;
         it.putExtra("user", user);
         startActivity(it);
     }
+
+    private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            actualiza(intent);
+        }
+    };
+
+    public void actualiza(Intent it){
+        lanzaNotificacion();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        intento.putExtra("nombre", "");
+        startService(intento);
+        registerReceiver(broadcastReceiver, new IntentFilter(ActualizaServicio._ACTION));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(broadcastReceiver);
+        stopService(intento);
+    }
+
+    public void lanzaNotificacion(){
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
+        mBuilder.setContentTitle(getString(R.string.hello_world));
+        mBuilder.setContentText(getString(R.string.app_name));
+        mBuilder.setTicker(getString(R.string.mensaje_nuevo));
+        mBuilder.setSmallIcon(R.drawable.bulldoghead);
+        mBuilder.setAutoCancel(true);
+
+        Intent intento = new Intent(this,NavigationActivity.class);
+        intento.putExtra("fragmento", "sensor");
+        PendingIntent resultPendingIntent = PendingIntent.getActivity(this, 500,intento,PendingIntent.FLAG_UPDATE_CURRENT);
+        mBuilder.setContentIntent(resultPendingIntent);
+        mBuilder.setDefaults(Notification.DEFAULT_ALL);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(5007, mBuilder.build());
+
+
+
+    }
+
 }

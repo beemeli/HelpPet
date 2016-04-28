@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">HelpPet</string>
+    <string name="mensaje_nuevo">¡Saca a pasear a tu perrito!</string>
+    <string name="hello_world">¡No olvides sacar a dar un paseo a tu perrito!</string>
+
     <string name="title_activity_login">LoginActivity</string>
     <string name="usuario">Usuario</string>
     <string name="password">Contraseña</string>
