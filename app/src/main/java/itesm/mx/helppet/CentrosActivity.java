@@ -55,7 +55,7 @@ public class CentrosActivity extends ListActivity {
             Dao daoMascota = getHelper(this, DBHelper.class).getMascotaDao();
             List<Mascota> mas = daoMascota.queryForAll();
             for(Mascota m:mas){
-                if(m.getTipo().equals(mascota.getTipo()) && m.getCategoria().equals(mascota.getCategoria()) && m.getTipo().equals(mascota.getTipo())){
+                if(m.getTipo().equals(mascota.getTipo()) && m.getCategoria().equals(mascota.getCategoria()) && m.getTamanio().equals(mascota.getTamanio())){
                     Usuarios u = (Usuarios) daoUsuario.queryForId(m.getUsuario().getId());
                     m.setUsuario(u);
                     mascotas.add(m);
