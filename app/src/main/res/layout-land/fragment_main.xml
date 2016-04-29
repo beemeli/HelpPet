@@ -8,7 +8,7 @@
     <ImageButton
         android:onClick="irAdopta"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:id="@+id/adopta"
         android:src="@drawable/adopta_b"
         android:background="#00ffffff"
@@ -20,7 +20,7 @@
     <ImageButton
         android:onClick="irAprende"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:id="@+id/aprende"
         android:src="@drawable/aprende_b"
         android:background="#00ffffff"
@@ -33,7 +33,7 @@
     <ImageButton
         android:onClick="irConocelos"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:id="@+id/conocelos"
         android:src="@drawable/nuestrosperritos_b"
         android:background="#00ffffff"
@@ -46,7 +46,7 @@
     <ImageButton
         android:onClick="irIdentifica"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:id="@+id/identifica"
         android:src="@drawable/identifica_b"
         android:background="#00ffffff"
