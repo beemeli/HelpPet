@@ -51,7 +51,7 @@
     <string name="llenartodosloscampos">Please fill in all fields</string>
     <string name="buscarm">OK</string>
 
-
+    <!--ALGO
     <string-array name="adopta_tamano_array">
         <item>Small</item>
         <item>Medium</item>
@@ -76,7 +76,7 @@
         <item>Tapete</item>
         <item>Inteligente</item>
     </string-array>
-
+-->
 
     <string-array name="noticias">
         <item>La agencia tributaria de México vigilará las cuentas de las iglesias</item>

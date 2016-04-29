@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
     private String user;
     Animation animTranslate;
 
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         user = getIntent().getStringExtra("email");
         animTranslate = AnimationUtils.loadAnimation(this, R.anim.anim_translate);
+
+
 
     }
 

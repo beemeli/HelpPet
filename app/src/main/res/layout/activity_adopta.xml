@@ -70,12 +70,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_edad"
+        android:spinnerMode="dropdown"
         android:layout_alignTop="@+id/textView2"
-        android:layout_alignRight="@+id/buscar"
-        android:layout_alignEnd="@+id/buscar"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
-        android:spinnerMode="dropdown" />
+        android:layout_alignLeft="@+id/spinner_categoria"
+        android:layout_alignStart="@+id/spinner_categoria" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -91,13 +89,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_categoria"
+        android:spinnerMode="dropdown"
         android:layout_below="@+id/spinner_edad"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/dogb"
-        android:layout_alignLeft="@+id/spinner_edad"
-        android:layout_alignStart="@+id/spinner_edad"
-        android:spinnerMode="dropdown" />
+        android:layout_toRightOf="@+id/dogb"
+        android:layout_toEndOf="@+id/dogb" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -114,12 +109,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_tamano"
+        android:spinnerMode="dropdown"
         android:layout_alignTop="@+id/textView8"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/dogb"
         android:layout_alignLeft="@+id/spinner_categoria"
-        android:layout_alignStart="@+id/spinner_categoria"
-        android:spinnerMode="dropdown" />
+        android:layout_alignStart="@+id/spinner_categoria" />
 
 </RelativeLayout>

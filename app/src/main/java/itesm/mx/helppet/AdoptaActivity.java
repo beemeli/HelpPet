@@ -53,7 +53,7 @@ public class AdoptaActivity extends AppCompatActivity {
         String categoria = spinnerCategoria.getSelectedItem().toString();
 
         Mascota p = new Mascota();
-        p.setTamano(tamano);
+        p.setTamanio(tamano);
         p.setEdad(edad);
         p.setCategoria(categoria);
         p.setTipo(mascota);
