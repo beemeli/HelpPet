@@ -1,8 +1,10 @@
 {
   "lugares":[
-    {"nombre":"PetCentral", "telefono":"52115200","sitio":"http://www.petcentral.mx/v/hotel_canino.html","lat":19.415130,"lon":-99.169675},
-    {"nombre":"Canino Mondo", "telefono":"55250448","sitio":"http://www.caninomondo.com/","lat":19.338608,"lon":-99.208296},
-    {"nombre":"Adventure Dog Camp", "telefono":"58113134","sitio":"","lat":19.337551,"lon":-99.320574},
-    {"nombre":"Animal Training & Dog Housing", "telefono":"65532159","sitio":"http://animaltraining.com.mx/","lat":19.348505,"lon":-99.305847}
+    {"nombre":"Mundo animal", "telefono":"56782898","sitio":"","lat":19.302124,"lon":-99.234212},
+    {"nombre":"Pets Place", "telefono":"56734791","sitio":"http://www.royalcanin.com.mx/","lat":19.290409,"lon":-99.131455},
+    {"nombre":"Veterinarian", "telefono":"56784620","sitio":"http://www.clinicavet.com.mx/","lat":19.295796,"lon":-99.132142},
+    {"nombre":"Royal Pets", "telefono":"55945836","sitio":"","lat":19.296606,"lon":-99.127807},
+    {"nombre":"KanKan", "telefono":"55559609","sitio":"","lat":19.270234,"lon":-99.129567},
+    {"nombre":"Veterinaria Hunter", "telefono":"55558378","sitio":"","lat":19.283643,"lon":-99.136819}
   ]
 }

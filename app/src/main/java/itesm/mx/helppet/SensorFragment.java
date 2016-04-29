@@ -34,6 +34,9 @@ public class SensorFragment extends Fragment implements SensorEventListener {
     private SensorManager manager;
     private int pasitos;
     float stepLength = (float)(160*0.45);
+    boolean inicio=true;
+    int pasosIni;
+    int pasosPause;
 
 
     public SensorFragment() {
@@ -120,33 +123,36 @@ public class SensorFragment extends Fragment implements SensorEventListener {
                 timer.schedule(new TimerTask() {
                     @Override
                     public void run() {
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if(!paused ) {
-                                    seconds = seconds + 1;
-                                    if (seconds >= 60) {
-                                        minutes++;
-                                        seconds = 0;
-                                    }
-                                    String min = "";
-                                    String sec = "";
-                                    if (String.valueOf(minutes).length() == 1) {
-                                        min = "0" + minutes;
-                                    } else {
-                                        min = minutes + "";
-                                    }
-                                    if (String.valueOf(seconds).length() == 1) {
-                                        sec = "0" + seconds;
-                                    } else {
-                                        sec = seconds + "";
-                                    }
+                        try {
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if (!paused) {
+                                        seconds = seconds + 1;
+                                        if (seconds >= 60) {
+                                            minutes++;
+                                            seconds = 0;
+                                        }
+                                        String min = "";
+                                        String sec = "";
+                                        if (String.valueOf(minutes).length() == 1) {
+                                            min = "0" + minutes;
+                                        } else {
+                                            min = minutes + "";
+                                        }
+                                        if (String.valueOf(seconds).length() == 1) {
+                                            sec = "0" + seconds;
+                                        } else {
+                                            sec = seconds + "";
+                                        }
 
-                                    tiempo.setText(min + ":" + sec);
+                                        tiempo.setText(min + ":" + sec);
+                                    }
                                 }
-                            }
-                        });
+                            });
+                        }catch(NullPointerException e){
 
+                        }
                     }
                 }, 0, 1000);
 
@@ -162,14 +168,32 @@ public class SensorFragment extends Fragment implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         System.out.println("sensor");
-
-        if(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-
-            float[] datos = event.values;
-            if (datos.length > 0) {
-                pasitos = (int) datos[0];
+        float[] datos = event.values;
+        if (datos.length > 0) {
+            if(inicio || stopped){
+                pasosIni= (int) datos[0];
+                inicio=false;
+            }
+            else {
+                pasitos = (int) datos[0] - pasosIni;
                 pasos.setText(pasitos + "");
             }
+
+        }
+        if(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+
+           /* float[] datos = event.values;
+            if (datos.length > 0) {
+                if(inicio || stopped){
+                    pasosIni= (int) datos[0];
+                    inicio=false;
+                }
+                else {
+                    pasitos = (int) datos[0] - pasosIni;
+                    pasos.setText(pasitos + "");
+                }
+
+            }*/
         }
 
 

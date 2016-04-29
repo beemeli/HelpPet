@@ -5,9 +5,11 @@ import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.content.Intent;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,6 +17,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapaLugarActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -83,6 +86,15 @@ public class MapaLugarActivity extends AppCompatActivity implements OnMapReadyCa
             //.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_location_history_24dp));
             this.googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myPosition, 12.0f));
 
+        } else{
+
+            LatLng myPosition = new LatLng(19.282026, -99.135494);
+
+            this.googleMap.addMarker(new MarkerOptions()
+                    .position(myPosition).title("Tú estás aquí"))
+                .setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_location_history_24dp));
+            this.googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myPosition, 12.0f));
+
         }
 
 
@@ -91,6 +103,33 @@ public class MapaLugarActivity extends AppCompatActivity implements OnMapReadyCa
 
         CargaLugaresAsyncTask cargaPoisAsyncTask = new CargaLugaresAsyncTask(this, this.googleMap);
         cargaPoisAsyncTask.execute(tipo, "AZURE");
+
+
+        this.googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                if(marker.getSnippet()!=null){
+
+                    if(!marker.getSnippet().contains("http")) {
+                        String numero = marker.getSnippet();
+                        callIntent.setData(Uri.parse("tel:" + numero));
+                        startActivity(callIntent);
+                    }
+                    else{
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(marker.getSnippet())));
+
+                    }
+
+                }
+
+
+
+                return false;
+
+            }
+        });
+
 
     }
 

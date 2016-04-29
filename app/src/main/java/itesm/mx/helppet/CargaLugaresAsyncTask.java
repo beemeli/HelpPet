@@ -110,11 +110,20 @@ public class CargaLugaresAsyncTask extends AsyncTask<String, Void, ArrayList<Lug
         if(result.size() > 0 ){
             for (Lugar sitio: result){
                 LatLng latLng = new LatLng(sitio.getLat(), sitio.getLon());
-                this.googleMap.addMarker(new MarkerOptions()
-                        .title(sitio.getNombre())
-                        .snippet(sitio.getSitio())
-                        .position(latLng))
-                        .setIcon(BitmapDescriptorFactory.defaultMarker(colorM(color)));
+                if(!sitio.getSitio().equals("")) {
+                    this.googleMap.addMarker(new MarkerOptions()
+                            .title(sitio.getNombre())
+                            .snippet(sitio.getSitio())
+                            .position(latLng))
+                            .setIcon(BitmapDescriptorFactory.defaultMarker(colorM(color)));
+                }
+                else{
+                    this.googleMap.addMarker(new MarkerOptions()
+                            .title(sitio.getNombre())
+                            .snippet(sitio.getTelefono())
+                            .position(latLng))
+                            .setIcon(BitmapDescriptorFactory.defaultMarker(colorM(color)));
+                }
             }
             this.googleMap.moveCamera(CameraUpdateFactory.zoomTo(12.0f));
         }
