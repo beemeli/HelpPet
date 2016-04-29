@@ -24,7 +24,7 @@ import static com.j256.ormlite.android.apptools.OpenHelperManager.getHelper;
 public class CentrosActivity extends ListActivity {
     private CentrosAdapter centrosAdapter;
     private Centro centro;
-    private static ArrayList<Centro> centros ;
+    private static ArrayList<Mascota> mascotas ;
     private Mascota mascota;
 
     //BASE DE DATOS
@@ -34,7 +34,7 @@ public class CentrosActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_centros);
-        centros = null;
+        mascotas = null;
         mascota = (Mascota)getIntent().getSerializableExtra("mascota");
         System.out.println("**********"+mascota.getTipo());
         System.out.println("**********" + mascota.getTamanio());
@@ -42,38 +42,34 @@ public class CentrosActivity extends ListActivity {
 
         //DB
         helper = getHelper(this, DBHelper.class);
-        try{
-            //Dao dao = getHelper().getCentroDao();
-            Dao daoUsuario = getHelper(this, DBHelper.class).getUsuarioDao();
-            Dao daoMascota = getHelper(this, DBHelper.class).getMascotaDao();
-            //Centros centro = new Centros("+Kota Acoxpa", "perro", "Juguetón", "Grande", "de 6 a 12 meses", "5555", "Paseo Acoxpa 211, Ciudad de Mexico", 19.285781, -99.1488464);
-            /*Usuarios u = new Usuarios("U1", "234342", "Leslie", "7867889", "direccion aosidha", -19.001, 19.212);
-            daoUsuario.create(new Usuarios("U1", "234342", "Leslie", "7867889", "direccion aosidha", -19.001, 19.212));
-
-            Mascota m = new Mascota("Sam", "perro", "Juguetón", "Grande", "de 6 a 12 meses", u);
-            Mascota m2 = new Mascota("Cofy", "gato", "Juguetón", "Grande", "de 6 a 12 meses",u);
-            daoMascota.create(m);
-            daoMascota.create(m2);*/
-
-
-            List<Mascota> mascotas = daoMascota.queryForAll();
-            for(Mascota mascota:mascotas){
-                System.out.println("****Usuario y Mascota: " + mascota.getUsuario().getId() + " " + mascota.getNombre());
-            }
-
-        }catch (SQLException e){
-            e.printStackTrace();
-            System.out.println("No SE AGREGARON A LA BASE");
-        }
-
-        centros = new ArrayList<Centro>();
+        mascotas = new ArrayList<Mascota>();
         centrosAdapter = new CentrosAdapter(this, cargaDatos());
         setListAdapter(centrosAdapter);
     }
 
-    public ArrayList<Centro> cargaDatos() {
-        ArrayList<Centro> series = new ArrayList<Centro>();
-        AssetManager assetManager = this.getAssets();
+    public ArrayList<Mascota> cargaDatos() {
+        ArrayList<Mascota> series = new ArrayList<Mascota>();
+        try{
+            //Dao dao = getHelper().getCentroDao();
+            Dao daoUsuario = getHelper(this, DBHelper.class).getUsuarioDao();
+            Dao daoMascota = getHelper(this, DBHelper.class).getMascotaDao();
+            List<Mascota> mas = daoMascota.queryForAll();
+            for(Mascota m:mas){
+                if(m.getTipo().equals(mascota.getTipo()) && m.getCategoria().equals(mascota.getCategoria()) && m.getTipo().equals(mascota.getTipo())){
+                    Usuarios u = (Usuarios) daoUsuario.queryForId(m.getUsuario().getId());
+                    m.setUsuario(u);
+                    mascotas.add(m);
+                }
+                //System.out.println("****Usuario y Mascota: " + mascota.getUsuario().getId() + " " + mascota.getNombre());
+            }
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("No SE OBTUVIERON MASCOTAS Y USUARIOS");
+        }
+
+
+        /*AssetManager assetManager = this.getAssets();
         BufferedReader bufferedReader = null;
         StringBuffer stringBuffer = new StringBuffer();
         try {
@@ -91,22 +87,25 @@ public class CentrosActivity extends ListActivity {
                 JSONObject jsonObjectDos = jsonArray.getJSONObject(i);
                 if( jsonObjectDos.getString("tipo").equals(mascota.getTipo()) && jsonObjectDos.getString("categoria").equals(mascota.getCategoria()) && jsonObjectDos.getString("tamanio").equals(mascota.getTamanio())) {
                     Centro centro = new Centro(jsonObjectDos.getString("nombre"), jsonObjectDos.getString("tipo"), jsonObjectDos.getString("categoria"), jsonObjectDos.getString("tamanio"), jsonObjectDos.getString("tel"), jsonObjectDos.getString("direccion"), jsonObjectDos.getDouble("latitude"), jsonObjectDos.getDouble("longitude"));
-                    centros.add(centro);
+                    mascotas.add(centro);
                 }
             }
         } catch (Exception ex) {
             ex.printStackTrace();
-        }
-        return centros;
+        }*/
+        return mascotas;
     }
 
 
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        final Centro centro_selec = centrosAdapter.getItem(position);
+        final Mascota mascota_selec = centrosAdapter.getItem(position);
         Intent it= new Intent(this, MapaActivity.class);
-        it.putExtra("centro", centro_selec);
+        it.putExtra("nombre", mascota_selec.getUsuario().getNombre());
+        it.putExtra("direccion", mascota_selec.getUsuario().getDireccion());
+        it.putExtra("latitud", mascota_selec.getUsuario().getLatitud());
+        it.putExtra("longitud", mascota_selec.getUsuario().getLongitud());
         //it.putExtra("user", user);
         //p = (Mascota)getIntent().getSerializableExtra("mascota");
         startActivity(it);

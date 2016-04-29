@@ -12,18 +12,18 @@ import java.util.List;
 /**
  * Created by Leslie on 13/03/2016.
  */
-public class CentrosAdapter  extends ArrayAdapter<Centro> {
+public class CentrosAdapter  extends ArrayAdapter<Mascota> {
 
     private final Context context;
 
-    public CentrosAdapter(Context context, List<Centro> list){
+    public CentrosAdapter(Context context, List<Mascota> list){
 
         super(context, 0 , list);
         this.context = context;
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Centro centro = getItem(position); //creo el objeto
+        Mascota mascota = getItem(position); //creo el objeto
         if(convertView == null) { //convertView renglon que voy a crear
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.asociacioneslayout, parent, false); //crear renglon
         }
@@ -31,13 +31,17 @@ public class CentrosAdapter  extends ArrayAdapter<Centro> {
         //Imagen
 
         TextView nombre = (TextView)convertView.findViewById(R.id.nombre);
-        nombre.setText(centro.getNombre());
+        nombre.setText(mascota.getNombre());
 
-        TextView temp = (TextView)convertView.findViewById(R.id.telefono);
-        temp.setText("Telefono: "+centro.getTelefono());
+        TextView telefono = (TextView)convertView.findViewById(R.id.telefono);
+        telefono.setText("Telefono: " + mascota.getUsuario().getTelefono());
 
-        TextView cap = (TextView)convertView.findViewById(R.id.direccion);
-        cap.setText("Direcciòn: "+centro.getDireccion());
+        TextView direccion = (TextView)convertView.findViewById(R.id.direccion);
+        direccion.setText("Direcciòn: " + mascota.getUsuario().getDireccion());
+
+        TextView contacto = (TextView)convertView.findViewById(R.id.contactoTV);
+        contacto.setText("Direcciòn: "+mascota.getUsuario().getNombre());
+
 
         return convertView;
     }

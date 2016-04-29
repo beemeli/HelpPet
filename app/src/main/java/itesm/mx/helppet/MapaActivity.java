@@ -15,21 +15,29 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapaActivity extends AppCompatActivity  implements OnMapReadyCallback{
 
     private GoogleMap googleMap;
-    private Centro centro;
-    private TextView nombre;
-    private TextView direccion;
+    private String nombre;
+    private String direccion;
+    private double latitud;
+    private double longitud;
+    private TextView nombreTV;
+    private TextView direccionTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa);
-        centro = (Centro)getIntent().getSerializableExtra("centro");
-        nombre = (TextView) findViewById(R.id.nombreDir);
-        direccion = (TextView) findViewById(R.id.direccionDir);
-        System.out.println("***********Nombre: "+centro.getNombre());
-        System.out.println("***********Dir: "+centro.getDireccion());
-        nombre.setText(centro.getNombre());
-        direccion.setText(centro.getDireccion());
+        nombre = getIntent().getStringExtra("nombre");
+        direccion = getIntent().getStringExtra("direccion");
+        latitud = getIntent().getDoubleExtra("latitud", 0.0);
+        longitud = getIntent().getDoubleExtra("longitud", 0.0);
+        nombreTV = (TextView) findViewById(R.id.nombreDir);
+        direccionTV = (TextView) findViewById(R.id.direccionDir);
+        System.out.println("***********Nombre: " + nombre);
+        System.out.println("***********Dir: " + direccion);
+        System.out.println("***********Lat: " + latitud);
+        System.out.println("***********Lon: " + longitud);
+        nombreTV.setText(nombre);
+        direccionTV.setText(direccion);
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.fragment3);
         mapFragment.getMapAsync(this);
@@ -38,9 +46,9 @@ public class MapaActivity extends AppCompatActivity  implements OnMapReadyCallba
     @Override
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
-        LatLng latLng = new LatLng(centro.getLatitud(), centro.getLongitud());
+        LatLng latLng = new LatLng(latitud, longitud);
         this.googleMap.addMarker(new MarkerOptions()
-                .position(latLng).title(centro.getNombre()));
+                .position(latLng).title(nombre));
                 //.setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
         ;
         // this.googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
