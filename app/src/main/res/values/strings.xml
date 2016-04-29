@@ -138,4 +138,7 @@
     <string name="perfil">Perfil</string>
     <string name="modificar">Modificar</string>
     <string name="pasos">Pasos</string>
+    <string name="encontre">Encontré un amigo</string>
+    <string name="guardar">Guardar</string>
+    <string name="agregomascota">Se ha agregado tu mascota</string>
 </resources>

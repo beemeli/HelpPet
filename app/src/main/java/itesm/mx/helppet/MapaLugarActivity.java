@@ -104,7 +104,7 @@ public class MapaLugarActivity extends AppCompatActivity implements OnMapReadyCa
         CargaLugaresAsyncTask cargaPoisAsyncTask = new CargaLugaresAsyncTask(this, this.googleMap);
         cargaPoisAsyncTask.execute(tipo, "AZURE");
 
-
+/*
         this.googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
@@ -129,7 +129,7 @@ public class MapaLugarActivity extends AppCompatActivity implements OnMapReadyCa
 
             }
         });
-
+*/
 
     }
 

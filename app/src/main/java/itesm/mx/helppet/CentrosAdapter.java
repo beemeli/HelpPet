@@ -37,10 +37,10 @@ public class CentrosAdapter  extends ArrayAdapter<Mascota> {
         telefono.setText("Telefono: " + mascota.getUsuario().getTelefono());
 
         TextView direccion = (TextView)convertView.findViewById(R.id.direccion);
-        direccion.setText("Direcciòn: " + mascota.getUsuario().getDireccion());
+        direccion.setText("Dirección: " + mascota.getUsuario().getDireccion());
 
         TextView contacto = (TextView)convertView.findViewById(R.id.contactoTV);
-        contacto.setText("Direcciòn: "+mascota.getUsuario().getNombre());
+        contacto.setText("Contacto: "+mascota.getUsuario().getNombre());
 
 
         return convertView;

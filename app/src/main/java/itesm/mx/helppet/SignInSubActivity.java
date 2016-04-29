@@ -3,7 +3,9 @@ package itesm.mx.helppet;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -18,19 +20,28 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.vision.barcode.Barcode;
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.j256.ormlite.dao.Dao;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Locale;
+
 
 public class SignInSubActivity extends AppCompatActivity implements OnMapReadyCallback {
     private EditText user;
     private EditText contra1;
-    private EditText contra2,telefono;
+    private EditText contra2,telefono, nombre;
     private HelpPetDAO mydb;
     private GoogleMap googleMap;
     private boolean flag;
     private LatLng direccion;
+    private DBHelper helper=null;
 
 
     // private DBHelper mydb;
@@ -39,10 +50,12 @@ public class SignInSubActivity extends AppCompatActivity implements OnMapReadyCa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_sub);
-        user = (EditText)findViewById(R.id.nombredr);
+        user = (EditText)findViewById(R.id.nombreuser);
         contra1 = (EditText)findViewById(R.id.contraS);
         contra2 = (EditText)findViewById(R.id.contraS2);
         telefono = (EditText)findViewById(R.id.telefono);
+        nombre = (EditText)findViewById(R.id.nombreuser);
+
         mydb = new HelpPetDAO(this);
 
         MapFragment mapFragment = (MapFragment) getFragmentManager()
@@ -51,6 +64,7 @@ public class SignInSubActivity extends AppCompatActivity implements OnMapReadyCa
 
         // mydb = new DBHelper(this);
 
+        helper = getHelper(this, DBHelper.class);
 
     }
 
@@ -61,30 +75,62 @@ public class SignInSubActivity extends AppCompatActivity implements OnMapReadyCa
                 && contra1.getText().toString().length()>0
                 && contra2.getText().toString().length()>0
                 && direccion!=null
-                && telefono.getText().length()>0
+                && telefono.getText().toString().length()>0
+                && nombre.getText().toString().length()>0
                 ){
 
            // if(user.getText().toString().contains("@")){
                 if(contra1.getText().toString().equals(contra2.getText().toString())){
-                    System.out.println(user.getText().toString()+ " ************"+contra1.getText().toString());
-                    mydb.open();
-                    System.out.println(mydb +"***********///////////***");
 
-                    Double lat = direccion.latitude;
-                    Double lon = direccion.longitude;
 
-                    if(mydb.insertUsuario(new Usuario(user.getText().toString(),contra1.getText().toString())) !=-1){
+                    try {
 
-                        Toast.makeText(this, R.string.registrook, Toast.LENGTH_LONG).show();
-                        Intent it = new Intent();
-                        setResult(RESULT_OK, it);
+                        Double lat = direccion.latitude;
+                        Double lon = direccion.longitude;
+
+
+                        Geocoder geocoder;
+                        List<Address> addresses;
+                        geocoder = new Geocoder(this, Locale.getDefault());
+
+                            addresses = geocoder.getFromLocation(lat, lon, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+
+                            String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+                            String city = addresses.get(0).getLocality();
+                            String state = addresses.get(0).getAdminArea();
+                            String country = addresses.get(0).getCountryName();
+                            String postalCode = addresses.get(0).getPostalCode();
+                            String knownName = addresses.get(0).getFeatureName();
+
+
+
+                        Dao daoUsuario = getHelper(this, DBHelper.class).getUsuarioDao();
+
+                        Usuarios u = new Usuarios();
+                        u.setId(user.getText().toString());
+                        u.setPassword(contra1.getText().toString());
+                        u.setNombre(nombre.getText().toString());
+                        u.setTelefono(telefono.getText().toString());
+                        u.setLatitud(lat);
+                        u.setLongitud(lon);
+                        u.setDireccion(address+","+city+", "+state+", "+country);
+
+                        daoUsuario.create(u);
+
+                        Intent it= new Intent(this, NavigationActivity.class);
+                        Toast.makeText(this, R.string.bienvenido, Toast.LENGTH_LONG).show();
+
+                        it.putExtra("user",user.getText().toString());
+                        startActivity(it);
                         finish();
 
-                    }
-                    else{
+                    }catch(Exception e ){
                         Toast.makeText(this, R.string.usuarioyaexiste, Toast.LENGTH_LONG).show();
 
                     }
+
+
+
 
                 }
                 else{
@@ -194,6 +240,21 @@ public class SignInSubActivity extends AppCompatActivity implements OnMapReadyCa
                 }
             }
         });
+    }
+    private DBHelper getHelper(SignInSubActivity SignInSubActivity, Class<DBHelper> dbHelperClass) {
+        if (helper == null) {
+            helper = OpenHelperManager.getHelper(this, DBHelper.class);
+        }
+        return helper;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (helper != null) {
+            OpenHelperManager.releaseHelper();
+            helper = null;
+        }
     }
 
 }

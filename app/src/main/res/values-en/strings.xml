@@ -140,5 +140,7 @@
     <string name="perfil">Profile</string>
     <string name="modificar">Save changes</string>
     <string name="pasos">Steps</string>
+    <string name="guardar">Save</string>
+    <string name="encontre">Help a friend</string>
 
 </resources>

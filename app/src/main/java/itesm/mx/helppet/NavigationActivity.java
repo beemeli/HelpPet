@@ -154,7 +154,17 @@ public class NavigationActivity extends AppCompatActivity
                     .replace(R.id.contenedor, new PerfilFragment()).commit();
 
 
-        } /*else if (id == R.id.nav_slideshow) {
+        }
+
+        else if (id == R.id.nav_amigo) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.contenedor, new AgregarMascotaFragment()).commit();
+
+
+        }
+
+
+        /*else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
 

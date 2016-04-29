@@ -32,7 +32,6 @@ public class ListAprendeArticuloFragment  extends ListFragment {
     private ArrayAdapter<String> desc;
     private ArrayAdapter<Articulo> items;
     private ArrayAdapter<Articulo> itemDesc;
-    Animation animTranslate;
 
 
 
@@ -46,7 +45,6 @@ public class ListAprendeArticuloFragment  extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        animTranslate = AnimationUtils.loadAnimation(getActivity(), R.anim.anim_translate);
 
         opcion = getActivity().getIntent().getStringExtra("opcion");
         System.out.println("---------------------" + opcion);
@@ -85,7 +83,6 @@ public class ListAprendeArticuloFragment  extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        l.getChildAt(position).startAnimation(animTranslate);
 
 
         itemDesc = new ArrayAdapter<Articulo>(getActivity(),
